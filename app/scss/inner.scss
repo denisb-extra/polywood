@@ -334,3 +334,96 @@ section.team {
     }
 }
 /* --------------------- /Section team ---------------------- */
+
+/* ---------------------- Section products ---------------------- */
+section.products {
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0;
+        margin: -23px;
+        .box {
+            width: 50%;
+            margin: 0;
+            padding: 23px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            margin: -13px -10px;
+            .box {
+                padding: 13px 10px;
+            }
+        }
+    }
+}
+/* --------------------- /Section products ---------------------- */
+
+.box-product {
+    cursor: pointer;
+    &:hover {
+        .text {
+            .title {
+                color: #C9A989;
+                &:after {
+                    background-color: #C9A989;
+                }
+            }
+        }
+        .image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .image {
+        position: relative;
+        overflow: hidden;
+        @include flex-center;
+        height: 440px;
+        img {
+            height: 100%;
+            transition: 0.5s;
+        }
+    }
+
+    .text {
+        margin-top: 10px;
+        .title {
+            @include f-r;
+            font-size: 36px;
+            letter-spacing: 0.06em;
+            color: #000;
+            text-align: center;
+            transition: 0.5s;
+            &:after {
+                content: "";
+                display: block;
+                width: 65px;
+                height: 2px;
+                background-color: #000;
+                margin: auto;
+                margin-top: 5px;
+                transition: 0.5s;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .image {
+            height: 390px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .image {
+            height: 150px;
+        }
+        .text {
+            .title {
+                font-size: 28px;
+            }
+        }
+    }
+}
